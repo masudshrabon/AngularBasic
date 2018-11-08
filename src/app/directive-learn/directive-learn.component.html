@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <button class="btn btn-primary" type="button" (click)="toggleOddEvenNumber()">Show Odd Number</button>
+    <ul class="list-group">
+      <div *ngIf="onlyOdd">
+        <li class="list-group-item" 
+        [ngClass]="{odd: odd % 2 !== 0}"
+        [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
+        *ngFor="let odd of oddNumbers">
+          {{ odd }}
+        </li>
+      </div>
+      <div *ngIf="!onlyOdd">
+        <li class="list-group-item" 
+        [ngClass]="{even: even % 2 !== 0}"
+        [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
+        *ngFor="let even of evenNumbers">
+          {{ even }}
+        </li>
+      </div>
+    </ul>
+  </div>
+  <p appBasicHighlight>
+    directive-learn works!
+  </p>
+</div>

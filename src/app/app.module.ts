@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { DirectiveLearnComponent } from './directive-learn/directive-learn.component';
+import { BasicHighlightDirective } from './shared/basic-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    DirectiveLearnComponent,
+    BasicHighlightDirective
   ],
   imports: [
     BrowserModule,
