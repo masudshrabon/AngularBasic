@@ -18,7 +18,7 @@
           {{ even }}
         </li>
       </div>
-      <!-- *ngIf directive transforms the code as following due to star(*) -->
+      <!-- angular transforms the code as following due to star(*) -->
       <ng-template [ngIf]="!onlyOdd">
         <div>
           <li class="list-group-item" 
@@ -29,6 +29,15 @@
           </li>
         </div>
       </ng-template>
+      <!-- custom structural directive *appUnless (opposite to *ngIf) -->
+      <div *appUnless="onlyOdd">
+        <li class="list-group-item" 
+        [ngClass]="{even: even % 2 !== 0}"
+        [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
+        *ngFor="let even of evenNumbers">
+          {{ even }}
+        </li>
+      </div>
     </ul>
   </div>
   <p appBasicHighlight> Let me style with basic highlight!</p>
